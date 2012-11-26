@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Leaflet</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css">
+        <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+        <link rel="stylesheet" href="map-toy.css">
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript">
+
+            var map = L.map('map').setView([46.19815, 6.13278], 14);
+
+            var attribution = '&copy; ' +
+                '<a href="http://www.openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>';
+
+            L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: attribution,
+                maxZoom: 18
+            }).addTo(map);
+
+        </script>
+    </body>
+</html>
