@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>OpenLayers 2</title>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <link rel="stylesheet" href="map-toy.css">
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript">
+
+            var center = new OpenLayers.LonLat(6.13278, 46.19815);
+            center.transform('EPSG:4326', 'EPSG:900913');
+
+            var map = new OpenLayers.Map('map', {
+                center: center,
+                zoom: 14,
+                layers: [
+                    new OpenLayers.Layer.OSM()
+                ]
+            });
+
+        </script>
+    </body>
+</html>
