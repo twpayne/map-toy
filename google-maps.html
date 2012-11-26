@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Google Maps</title>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <link rel="stylesheet" href="map-toy.css">
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript">
+
+            var mapDiv = document.getElementById('map');
+            var map = new google.maps.Map(mapDiv, {
+                center: new google.maps.LatLng(46.19815, 6.13278),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+        </script>
+    </body>
+</html>
