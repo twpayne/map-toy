@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Google Maps</title>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <link rel="stylesheet" href="map-toy.css">
+        <meta name="viewport" content="initial-scale=1.0, target-densitydpi=device-dpi, user-scalable=no, width=device-width">
+    </head>
+    <body>
+        <div id="map"></div>
+        <script type="text/javascript">
+
+            var mapDiv = document.getElementById('map');
+            var map = new google.maps.Map(mapDiv, {
+                center: new google.maps.LatLng(46.19815, 6.13278),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var marker = new google.maps.Marker({
+                position: map.getCenter()
+            });
+            marker.setMap(map);
+
+            google.maps.event.addListener(marker, 'click', function() {
+                var infoWindow = new google.maps.InfoWindow({
+                    content: '<img src="jsromandie.jpeg" width="180" height="180">',
+                    position: marker.getPosition()
+                });
+                infoWindow.open(map);
+            });
+
+        </script>
+    </body>
+</html>
